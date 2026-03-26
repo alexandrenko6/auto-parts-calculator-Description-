@@ -1,1 +1,39 @@
-
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ main.py │
+│ ┌─────────────────────────────────────────────────────────────────────┐ │
+│ │ while True: │ │
+│ │ data = get_part_info() │ │
+│ │ delivery_cost = calculate_delivery_cost(...) │ │
+│ │ after_promo, discount = apply_promocode(...) │ │
+│ │ after_insurance, insurance_cost = apply_insurance(...) │ │
+│ │ after_urgent, urgent_fee = apply_urgent(...) │ │
+│ │ total = calculate_total(...) │ │
+│ │ display_result(result) │ │
+│ │ log_calculation(...) │ │
+│ └─────────────────────────────────────────────────────────────────────┘ │
+└─────────────────────────────────────────────────────────────────────────────┘
+│ │ │ │
+▼ ▼ ▼ ▼
+┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐
+│ input_handler.py│ │ calculator.py │ │ logger.py │ │ constants.py │
+├─────────────────┤ ├─────────────────┤ ├─────────────────┤ ├─────────────────┤
+│ get_part_info() │ │ calculate_ │ │ setup_logger() │ │ DELIVERY_RATES │
+│ get_number_ │ │ delivery_cost() │ │ log_calcula- │ │ PROMOCODES │
+│ input() │ │ apply_promo- │ │ tion() │ │ INSURANCE_ │
+│ get_yes_no_ │ │ code() │ │ get_log_file_ │ │ PERCENT │
+│ input() │ │ apply_insur- │ │ path() │ │ URGENT_FEE │
+│ get_delivery_ │ │ ance() │ │ │ │ FREE_DELIVERY_ │
+│ method() │ │ apply_urgent() │ │ │ │ THRESHOLD │
+│ get_promocode() │ │ calculate_ │ │ │ │ │
+│ display_ │ │ total() │ │ │ │ │
+│ result() │ │ check_free_ │ │ │ │ │
+│ │ │ delivery() │ │ │ │ │
+└─────────────────┘ └─────────────────┘ └─────────────────┘ └─────────────────┘
+│
+┌─────────────────┐ │
+│ model.py │◄────────────┘
+├─────────────────┤ (использует
+│ compare_ │ constants)
+│ delivery_ │
+│ options() │
+└─────────────────┘
