@@ -2,7 +2,7 @@
 Модуль расчётов для калькулятора автозапчастей.
 """
 
-from src.constants import (
+from constants import (
     DELIVERY_RATES,
     PROMOCODES,
     INSURANCE_PERCENT,
